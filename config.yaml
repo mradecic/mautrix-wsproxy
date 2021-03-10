@@ -1,0 +1,6 @@
+# make IP localhost or private IP
+listen_address: 0.0.0.0:29331
+appservices:
+- id: imessage
+  as: <as_token>
+  hs: <hs_token>
