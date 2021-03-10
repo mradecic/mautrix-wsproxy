@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  mautrix-wsproxy:
+    container_name: mautrix-wsproxy
+    #image: dock.mau.dev/tulir/mautrix-wsproxy
+    ## Build from local Dockerfile
+    build: .
+    restart: unless-stopped
+    ports:
+      # ensure listen port forwards to container port
+      - "29331:29331"
+    environment:
+      #LISTEN_ADDRESS: ":29331"
+      APPSERVICE_ID: imessage
+      AS_TOKEN: put your as_token here
+      HS_TOKEN: put your hs_token here
